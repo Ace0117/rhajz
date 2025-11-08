@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual-Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h2>My Portfolio</h2>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Pictures</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="dark-mode-toggle">🌙</button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a web developer passionate about creating amazing digital experiences.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <img src="rhajz.jpg" alt="Profile Picture of rhajz">
+            <div class="text">
+                <p>Hello! I'm Madrid, Rhajz Aldiguer D.  and I am currently a 2nd-year college student pursuing a degree in Information Technology at the University of Eastern Pangasinan (UEP). I have always been fascinated by computers and technology, which is why I decided to take this course. I enjoy learning about how computers work, exploring different software, and improving my technical skills. I love playing online game, watching movies, eating, and sleeping.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+                <div class="skill">C++</div>
+                <div class="skill">Python</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Pictures</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <img src="pogi1.jpg">
+                    <h3>Picture 1</h3>
+                    <p>Pogi 1.</p>
+                    <a href="#">View Live</a>
+                </div>
+                <div class="project">
+                    <img src="pogi2.jpg">
+                    <h3>Picture 2</h3>
+                    <p>Pogi 2.</p>
+                    <a href="#">View Live</a>
+                </div>
+                <div class="project">
+                    <img src="pogi3.jpg">
+                    <h3>Picture 3</h3>
+                    <p>Pogi 3.</p>
+                    <a href="#">View Live</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+                 <a href="https://www.facebook.com/share/19rfp7w9wj/">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/rhajz_ald?igsh=bm40am40ODRmOTZr">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const toggle = document.getElementById('dark-mode-toggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Mobile nav toggle (basic)
+        const navMenu = document.getElementById('nav-menu');
+        // Add a hamburger button in HTML for full mobile support, but this is a start.
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+ /* Reset and base styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background: #f4f4f4; transition: background 0.3s, color 0.3s; }
+        body.dark { background: #222; color: #f4f4f4; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        ul li {
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 300px;
+            transition: background-color 0.3s;
+        }
+        ul li:hover {
+            background-color:blueviolet;
+            color: black;
+            cursor: pointer;
+        }
+        /* Header */
+        header { background: #333; color: #fff; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 20px; }
+        nav a { color: #fff; text-decoration: none; transition: color 0.3s; }
+        nav a:hover { color: #ff6b6b; }
+        #dark-mode-toggle { background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; }
+
+        /* Sections */
+        section { padding: 100px 0; min-height: 100vh; }
+        #hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; text-align: center; padding-top: 150px; position: relative; }
+        #hero::before { content: ''; background: url('https://via.placeholder.com/1200x400?text=Hero+Background') no-repeat center/cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.3; z-index: -1; }
+        #hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        #hero p { font-size: 1.2rem; }
+        #about, #skills, #projects, #contact { background: #fff; }
+        body.dark #about, body.dark #skills, body.dark #projects, body.dark #contact { background: #333; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2.5rem; color: #333; }
+        body.dark .section-title { color: #f4f4f4; }
+
+        /* About */
+        #about .container { display: flex; align-items: center; gap: 40px; }
+        #about img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid #ff6b6b; transition: transform 0.3s; }
+        #about img:hover { transform: scale(1.05); }
+        #about .text { flex: 1; }
+
+        /* Skills */
+        #skills .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
+        .skill { background: #f9f9f9; padding: 20px; text-align: center; border-radius: 8px; transition: transform 0.3s; }
+        .skill:hover { transform: translateY(-5px); }
+        body.dark .skill { background: #444; }
+
+        /* Projects */
+        #projects .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .project { background: #f9f9f9; padding: 20px; border-radius: 8px; transition: box-shadow 0.3s, transform 0.3s; }
+        .project:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.2); transform: translateY(-5px); }
+        .project img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: opacity 0.3s; }
+        .project img:hover { opacity: 0.8; }
+        body.dark .project { background: #444; }
+
+        /* Contact */
+        #contact form { max-width: 600px; margin: 0 auto; }
+        form input, form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
+        form button { background: #ff6b6b; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s; }
+        form button:hover { background: #ff5252; }
+
+        /* Footer */
+        footer { background: #333; color: #fff; text-align: center; padding: 20px 0; }
+        body.dark footer { background: #222; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #about .container { flex-direction: column; text-align: center; }
+            nav ul { flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #333; display: none; }
+            nav ul.show { display: flex; }
+        }
